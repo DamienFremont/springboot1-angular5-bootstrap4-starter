@@ -1,0 +1,9 @@
+version: '2'
+services:
+    starter-postgresql:
+        image: postgres:9.6.5
+        environment:
+            - POSTGRES_USER=springboot1-angular5-bootstrap4-starter
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

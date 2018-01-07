@@ -1,0 +1,14 @@
+version: '2'
+services:
+    starter-app:
+        image: springboot1-angular5-bootstrap4-starter
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://springboot1-angular5-bootstrap4-starter-postgresql:5432/springboot1-angular5-bootstrap4-starter
+            - APP_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    starter-postgresql:
+        extends:
+            file: postgresql.yml
+            service: springboot1-angular5-bootstrap4-starter-postgresql
