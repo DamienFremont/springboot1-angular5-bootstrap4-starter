@@ -1,0 +1,77 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+logging:
+    level:
+        ROOT: DEBUG
+        com.damienfremont.starter: DEBUG
+        io.github.jhipster: DEBUG
+
+jwt:
+    header: Authorization
+    expires_in: 300 # 5 minutes
+    mobile_expires_in: 600 # 10 minutes
+    secret: XXXXXXYYYU6546546546654654654654654654
+
+spring:
+    application:
+        name: springboot1-angular5-bootstrap4-starter
+    profiles:
+        active: dev
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use gulp + BrowserSync for livereload
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:file:./target/h2db/db/springboot1-angular5-bootstrap4-starter;DB_CLOSE_DELAY=-1
+        username: sa
+        password: sa
+    jpa:
+        generate-ddl: false
+        show-sql: true
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+                ddl-auto: update
+                use_second_level_cache: false
+                cache.use_query_cache: false
+                generate_statistics: true
+    data:
+        jpa.repositories.enabled: true
+    jackson:
+        serialization.indent_output: true
+    h2:
+        console:
+            enabled: false
+
+# ===================================================================
+# To enable SSL, generate a certificate using:
+# keytool -genkey -alias springboot1-angular5-bootstrap4-starter -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+#
+# You can also use Let's Encrypt:
+# https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
+#
+# Then, modify the server.ssl properties so your "server" configuration looks like:
+#
+# server:
+#    port: 8443
+#    ssl:
+#        key-store: keystore.p12
+#        key-store-password: <your-password>
+#        key-store-type: PKCS12
+#        key-alias: springboot1-angular5-bootstrap4-starter
+# ===================================================================
+server:
+    port: 8080
