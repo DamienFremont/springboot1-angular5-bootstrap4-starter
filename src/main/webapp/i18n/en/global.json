@@ -1,0 +1,25 @@
+{
+    "global": {
+        "title": "springboot1-angular5-bootstrap4-starter",
+        "menu": {
+            "home": "Home",
+            "users": {
+                "main": "Users",
+                "file": "List",
+                "country": "Add"
+            },
+            "language": "Language"
+        }
+    },
+    "error": {
+        "internalServerError": "Internal server error",
+        "server.not.reachable": "Server not reachable",
+        "url.not.found": "Not found",
+        "NotNull": "Field {{ fieldName }} cannot be empty!",
+        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
+        "userexists": "Login name already used!",
+        "emailexists": "Email is already in use!",
+        "idexists": "A new {{ entityName }} cannot already have an ID"
+    },
+    "footer": "Damien FREMONT"
+}
