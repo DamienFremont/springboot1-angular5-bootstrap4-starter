@@ -14,7 +14,7 @@ public class RestMvcConfig extends RepositoryRestMvcConfiguration {
 	@Override
 	public RepositoryRestConfiguration config() {
 		RepositoryRestConfiguration config = super.config();
-		// config.setBasePath("/api/");
+		config.setBasePath("/api/");
 		return config;
 	}
 

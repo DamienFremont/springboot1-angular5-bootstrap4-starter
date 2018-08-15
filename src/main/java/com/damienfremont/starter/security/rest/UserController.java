@@ -17,19 +17,19 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @RestController
-@RequestMapping( value = "/api", produces = MediaType.APPLICATION_JSON_VALUE )
+@RequestMapping( value = "/user", produces = MediaType.APPLICATION_JSON_VALUE )
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping( method = GET, value = "/user/{userId}" )
+    @RequestMapping( method = GET, value = "/{userId}" )
     @PreAuthorize("hasRole('ADMIN')")
     public User loadById( @PathVariable Long userId ) {
         return this.userService.findById( userId );
     }
 
-    @RequestMapping( method = GET, value= "/user/all")
+    @RequestMapping( method = GET, value= "/all")
     @PreAuthorize("hasRole('ADMIN')")
     public List<User> loadAll() {
         return this.userService.findAll();

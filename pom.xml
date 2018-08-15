@@ -23,6 +23,8 @@
 		<maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
 		<maven-war-plugin.version>2.6</maven-war-plugin.version>
 
+		<springfox-swagger.version>2.7.0</springfox-swagger.version>
+
 	</properties>
 	<dependencies>
 
@@ -68,6 +70,20 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-webmvc</artifactId>
 		</dependency>
+
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>${springfox-swagger.version}</version>
+		    <scope>compile</scope>
+		</dependency>
+		 <dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>${springfox-swagger.version}</version>
+		    <scope>compile</scope>
+		</dependency>
+ 
 
 		<!-- DATA ACCESS -->
 		<dependency>
